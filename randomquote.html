@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            color: white;
+        }
+
+        #quoteContainer {
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        #quote {
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+
+        #newQuoteBtn {
+            padding: 10px 20px;
+            font-size: 1.6em;
+            cursor: pointer;
+            background-color: white;
+            color: blue;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            /* Adjust the margin to your preference */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="quoteContainer">
+        <div id="quote"></div>
+    </div>
+    <button id="newQuoteBtn" onclick="generateQuote()">New Quote</button>
+
+    <script>
+        // Array of quotes
+        const quotes = [
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "Life is what happens when you're busy making other plans. - John Lennon",
+            "In three words I can sum up everything I've learned about life: it goes on. - Robert Frost",
+            "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+            "Believe you can and you're halfway there. - Theodore Roosevelt",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill"
+        ];
+
+        // Function to generate a random quote
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            document.getElementById("quote").innerHTML = randomQuote;
+        }
+
+        // Initial quote display
+        generateQuote();
+    </script>
+
+</body>
+
+</html>

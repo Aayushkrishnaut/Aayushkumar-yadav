@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. John Doe's Clinic</title>
+    <!-- Include the Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-500 p-4 text-white fixed w-full z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-lg font-bold">Dr. Anjali Suthar's Clinic</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="#home" class="hover:underline">Home</a>
+                <a href="#about" class="hover:underline">About</a>
+                <a href="#order" class="hover:underline">Order</a>
+                <a href="#consultations" class="hover:underline">Consultations</a>
+                <a href="#prescription" class="hover:underline">Medical Prescription</a>
+                <a href="#signup" class="hover:underline border border-white rounded-md px-3 py-1">Signup</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menuButton" class="text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+                <div id="mobileMenu"
+                    class="hidden absolute top-full right-0 mt-2 bg-white text-black shadow-md py-2 w-32 rounded-md">
+                    <a href="#home" class="block px-4 py-2">Home</a>
+                    <a href="#about" class="block px-4 py-2">About</a>
+                    <a href="#order" class="block px-4 py-2">Order</a>
+                    <a href="#consultations" class="block px-4 py-2">Consultations</a>
+                    <a href="#prescription" class="block px-4 py-2">Medical Prescription</a>
+                    <a href="#signup" class="block px-4 py-2 border-b border-gray-300">Signup</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <script>
+        // Toggle mobile menu visibility
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on item click
+        const mobileMenuItems = document.querySelectorAll('#mobileMenu a');
+        mobileMenuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+    <!-- Header Section -->
+    <header class="bg-gray-800 text-white text-center py-16">
+        <h1 class="text-4xl font-bold mb-4">Welcome to Dr. Anjali Suthar's Clinic</h1>
+        <p class="text-lg">Providing Quality Healthcare Services</p>
+        <img src="https://source.unsplash.com/800x400/?doctor" alt="Doctor Header Image"
+            class="mt-8 rounded-md mx-auto">
+    </header>
+
+
+
+    <!-- Body Section - Doctor Images -->
+    <section class="container mx-auto text-center mt-8">
+        <h2 class="text-2xl font-bold mb-4">Meet Our Experienced Team</h2>
+        <div class="flex flex-wrap justify-center">
+            <div class="m-4">
+                <img src="https://source.unsplash.com/300x300/?women" alt="Doctor 1"
+                    class="rounded-full h-32 w-32 object-cover">
+                <p class="mt-2">Dr.Anjali</p>
+            </div>
+            <div class="m-4">
+                <img src="https://source.unsplash.com/300x300/?girl" alt="Doctor 2"
+                    class="rounded-full h-32 w-32 object-cover">
+                <p class="mt-2">Dr.Rima</p>
+            </div>
+            <!-- Add more doctor images as needed -->
+        </div>
+    </section>
+
+    <!-- Body Section - Disease Cards -->
+    <section id="diseases" class="container mx-auto mt-8">
+        <h2 class="text-2xl font-bold mb-4">Common Diseases We Treat</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Disease Card 1 -->
+            <div class="bg-white p-4 rounded-md shadow-md">
+                <img src="https://source.unsplash.com/400x200/?dengue" alt="Disease 1" class="mb-4 rounded-md">
+                <h3 class="text-lg font-bold">Cardiology</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit nec felis ultricies ultrices.
+                </p>
+            </div>
+
+            <!-- Disease Card 1 -->
+            <div class="bg-white p-4 rounded-md shadow-md">
+                <img src="https://source.unsplash.com/400x200/?dengue" alt="Disease 1" class="mb-4 rounded-md">
+                <h3 class="text-lg font-bold">Cardiology</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit nec felis ultricies ultrices.
+                </p>
+            </div>
+
+            <!-- Disease Card 2 -->
+            <div class="bg-white p-4 rounded-md shadow-md">
+                <img src="https://source.unsplash.com/400x200/?malaria" alt="Disease 2" class="mb-4 rounded-md">
+                <h3 class="text-lg font-bold">Dermatology</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget velit nec felis ultricies ultrices.
+                </p>
+            </div>
+
+            <!-- Add more disease cards as needed -->
+        </div>
+    </section>
+
+    <section id="about" class="container mx-auto mt-8 bg-black text-white p-8 rounded-md">
+        <h2 class="text-2xl font-bold mb-4">About Dr. Anjali Suthar</h2>
+        <div class="flex items-center mb-4">
+            <img src="https://source.unsplash.com/400x200/?women" alt="Doctor Image 1"
+                class="w-24 h-24 rounded-full mr-4">
+            <p>Dr. Anjali Suthar is a highly qualified and experienced medical professional based in Rajasthan, India.
+                She
+                completed her MBBS degree from [University Name] and has successfully cleared the National Eligibility
+                cum
+                Entrance Test (NEET).</p>
+        </div>
+
+        <p> If you have any specific questions or if there's anything else you would like to know or discuss about Dr.
+            Anjali Suthar, feel free to ask.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-500 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2023 Dr. Anjali Suthar's Clinic. All rights reserved.</p>
+            <p class="text-sm">Address: 123 Medical Avenue, City, State, Pincode</p>
+            <p class="text-sm">Phone: +91 123 456 7890 | Email: info@dranjalisutharclinic.com</p>
+            <div class="flex justify-center space-x-4 mt-4">
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Font Awesome for social media icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+
+</body>
+
+</html>
